@@ -33,10 +33,10 @@ export default function Main(props) {
 
     return (
         <div>
-            <div className="main--placeholder">
-                {/* { showHeadings.h1 && <h1>Website in progress...</h1> }
+            <div className="main main--placeholder">
+                { showHeadings.h1 && <h1>Website in progress...</h1> }
                 { showHeadings.h2 && <h2>please stand by...</h2> }
-                { showHeadings.h3 && <h3>coming soon...</h3> } */}
+                { showHeadings.h3 && <h3>coming soon...</h3> }
             </div>
         </div>
     );
