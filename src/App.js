@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 
-function App() {
+export default function App() {
 
     const headerMenu = [
         "About",
@@ -18,5 +18,3 @@ function App() {
         </div>
     );
 };
-
-export default App;

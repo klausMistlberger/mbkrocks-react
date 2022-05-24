@@ -1,6 +1,8 @@
 :root {
     --blue: #0849BD;
     --grey: #131A28;
+    --greyblue: #1E2E3E;
+    --bordercolor: #999999;
     margin: 0;
     padding: 0;
 
@@ -12,8 +14,40 @@
 }
 
 @media screen and (max-width: 575px) {
+    /* .nav--item { */
+        /* display: none; */
+    /* } */
+
+    .nav--item-container {
+        flex-direction: column;
+
+        padding: 1em;
+        width: 150px;
+        position: absolute;
+        top: calc(3em + 1px);
+        right: 0;
+
+        opacity: 0;
+        transform: translateY(-1em);
+        transition: transform 160ms ease-in-out, opacity 160ms ease-in-out;
+
+        text-align: right;
+
+        background-color: #182234;
+        border-left: 1px solid var(--bordercolor);
+        border-bottom: 1px solid var(--bordercolor);
+        border-bottom-left-radius: 15px;
+    }
+
+    .nav--item-container[active="true"] {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
     .nav--item {
-        display: none;
+        padding: .5em;
+        font-size: 24px;
     }
 
     .burger-menu {
@@ -25,12 +59,22 @@
     .burger-menu {
         display: none;
     }
+    
+    .nav--item-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav--item {
+        padding: 1em;
+        font-size: 15px;
+    }
 }
 
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background-color: #1e2e3e;
+    background-color: var(--greyblue);
     color: #ddd;
 }
 
@@ -47,6 +91,7 @@ nav {
     font-weight: 600;
     color: white;
 
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -58,7 +103,7 @@ nav {
     text-decoration: none;
     color: white;
     font-weight: 900;
-    margin: 0 auto 0 2em;
+    margin: 0 auto 0 1em;
 
     transition: color 160ms ease-in;
 }
@@ -72,11 +117,7 @@ nav {
 }
 
 .nav--item {
-
-    padding: 1em;
-    font-size: 15px;
     cursor: pointer;
-
     transition: color 160ms ease-in;
 }
 
@@ -92,7 +133,6 @@ nav {
 .burger-menu {
     padding: 1em;
     cursor: pointer;
-
 }
 
 .burger-menu--line {
