@@ -1,11 +1,11 @@
 import React from 'react';
-import './Contact.css';
+import './css/Contact.css';
 // import Email, {send} from './smtp';
 
 export default function Contact() {
 
     return (
-        <div className="content-section">
+        <div className="contact">
             <h2>Contact</h2>
             <address>
                 <h3>Klaus Mistlberger</h3>

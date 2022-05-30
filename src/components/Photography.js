@@ -1,5 +1,5 @@
 import React from 'react';
-import './Photography.css';
+import './css/Photography.css';
 
 export default function Photography() {
     return (

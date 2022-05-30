@@ -41,7 +41,7 @@ body {
 .content-section {
     margin: 0 auto;
     position: relative;
-    top: 5em;
+    top: 6em;
     z-index: -69;
     max-width: 575px;
 }
