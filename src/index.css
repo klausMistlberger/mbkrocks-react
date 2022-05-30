@@ -1,7 +1,8 @@
 :root {
-    --blue: #0849BD;
-    --grey: #131A28;
+    --blue: #5272ad;
+    --midblue: #394f79;
     --greyblue: #1E2E3E;
+    --grey: #131A28;
     --bordercolor: #999999;
     margin: 0;
     padding: 0;
@@ -26,6 +27,10 @@ body {
     z-index: 0;
 
     text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header {
@@ -33,7 +38,10 @@ body {
     z-index: 69;
 }
 
-.main {
+.content-section {
+    margin: 0 auto;
     position: relative;
     z-index: -69;
+    max-width: 575px;
 }
+

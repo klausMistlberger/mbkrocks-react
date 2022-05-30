@@ -8,22 +8,27 @@ export default function App() {
         {
             name: "Main", 
             isShown: true,
+            id: 0
         },
         {
             name: "About",
             isShown: false,
+            id: 1
         },
         {
             name: "Projects",
             isShown: false,
+            id: 2
         },
         {
             name: "Photography",
             isShown: false,
+            id: 3
         },
         {
             name: "Contact",
             isShown: false,
+            id: 4
         }
     ];
 
@@ -31,7 +36,7 @@ export default function App() {
 
     const changeNavigation = (ev) => {
         const target = ev.target;
-        console.log( target.innerHTML );
+        // console.log( target.innerHTML );
         setNavigationMenu( prevNav => {
             const newNav = [...prevNav];
             newNav.forEach( el => {
@@ -39,7 +44,7 @@ export default function App() {
                     ? el.isShown = true
                     : el.isShown = false
             });
-            console.log( newNav );
+            // console.log( newNav );
             return newNav;
         });
     };

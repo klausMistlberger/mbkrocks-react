@@ -10,7 +10,7 @@
         width: 150px;
         /* width: 50vw; */
         position: absolute;
-        top: calc(3em + 1px);
+        top: calc(10vh + 1px);
         right: 0;
 
         opacity: 0;
@@ -41,7 +41,7 @@
     }
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 575px) {
     .burger-menu {
         display: none;
     }
@@ -61,10 +61,11 @@
 nav {
     /* z-index: 69; */
     width: 100vw;
-    height: 3em;
+    height: 10vh;
     background-color: var(--grey);
 
     font-size: 24px;
+    /* font-size: 2rem; */
     font-weight: 600;
     color: white;
 

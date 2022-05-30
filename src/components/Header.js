@@ -16,21 +16,27 @@ export default function Header(props) {
             ? navItemContainer.setAttribute( 'portrait', 'true' ) 
             : navItemContainer.setAttribute( 'portrait', 'false' )
         ;
-    },[width])
+    },
+    [width])
 
     const navItems = props.navigation.map( el => {
         // console.log( el );
         return (
             <div 
-                key={el.name} 
+                key={el.id} 
                 className="nav--item"
-                onClick={(ev) => {props.changeNavigation(ev)}}
+                onClick={(ev) => {
+                    props.changeNavigation(ev)
+                    openBurgerMenu();
+                }}
             >
                 {el.name}
             </div>
-        )
+        );
     });
 
+
+    // open/close burgermenu
     const [burgerMenu, setBurgerMenu] = useState(false);
     const openBurgerMenu = () => {
         setBurgerMenu( prev => !prev );
@@ -40,7 +46,8 @@ export default function Header(props) {
         const navItemContainer = document.querySelector( '.nav--item-container' );
         const isActive = !navItemContainer.getAttribute( 'active' );
         navItemContainer.setAttribute( 'active', `${burgerMenu}` );
-    },[burgerMenu]);
+    },
+    [burgerMenu]);
 
     return(
         <nav>
