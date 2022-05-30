@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import './Header.css';
 
 export default function Header(props) {
-    // console.log(props)
+    // console.log(props);
 
     const [width, setWidth] = useState( window.innerWidth );
     
@@ -9,20 +10,24 @@ export default function Header(props) {
         setWidth( window.innerWidth );
     });
 
-    // let navItemContainer;
-
     useEffect(() => {
         const navItemContainer = document.querySelector( '.nav--item-container' );
-        // console.log( navItemContainer );
-        window.innerWidth < 576 ? 
-            navItemContainer.setAttribute( 'portrait', 'true' ) 
-          : navItemContainer.setAttribute( 'portrait', 'false' )
+        window.innerWidth < 576 
+            ? navItemContainer.setAttribute( 'portrait', 'true' ) 
+            : navItemContainer.setAttribute( 'portrait', 'false' )
         ;
     },[width])
 
-    const navItems = props.nav.map( el => {
+    const navItems = props.navigation.map( el => {
+        // console.log( el );
         return (
-            <div key={el} className="nav--item">{el}</div>
+            <div 
+                key={el.name} 
+                className="nav--item"
+                onClick={(ev) => {props.changeNavigation(ev)}}
+            >
+                {el.name}
+            </div>
         )
     });
 
@@ -40,7 +45,9 @@ export default function Header(props) {
     return(
         <nav>
             <a href="/" className="logo">MBK</a>
-            <div className="nav--item-container" portrait="" active="false">{navItems}</div>
+            <div className="nav--item-container" portrait="" active="false">
+                {navItems}
+            </div>
             <div className="burger-menu" onClick={openBurgerMenu}>
                 <div className="burger-menu--line"></div>
                 <div className="burger-menu--line"></div>

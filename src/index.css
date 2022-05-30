@@ -11,66 +11,7 @@
 :root > * {
     margin: 0;
     padding: 0;
-}
-
-@media screen and (max-width: 575px) {
-    /* .nav--item { */
-        /* display: none; */
-    /* } */
-
-    .nav--item-container {
-        z-index: -1;
-
-        flex-direction: column;
-
-        padding: 1em;
-        width: 150px;
-        position: absolute;
-        top: calc(3em + 1px);
-        right: 0;
-
-        opacity: 0;
-        transform: translateY(-1em);
-        transition: transform 160ms ease-in-out, opacity 160ms ease-in-out;
-
-        text-align: right;
-
-        background-color: #182234;
-        border-left: 1px solid var(--bordercolor);
-        border-bottom: 1px solid var(--bordercolor);
-        border-bottom-left-radius: 15px;
-    }
-
-    .nav--item-container[active="true"] {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-
-    .nav--item {
-        padding: .5em;
-        font-size: 24px;
-    }
-
-    .burger-menu {
-        display: initial;
-    }
-}
-
-@media screen and (min-width: 576px) {
-    .burger-menu {
-        display: none;
-    }
-    
-    .nav--item-container {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .nav--item {
-        padding: 1em;
-        font-size: 15px;
-    }
+    position: relative;
 }
 
 
@@ -81,73 +22,18 @@ body {
 }
 
 .App {
+    position: relative;
+    z-index: 0;
+
     text-align: center;
 }
 
-
-nav {
-    /* z-index: 69; */
-
-    height: 3em;
-    background-color: var(--grey);
-
-    font-size: 24px;
-    font-weight: 600;
-    color: white;
-
+.header {
     position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    border-bottom: 1px solid #999999;
-}
-
-.logo {
-    text-decoration: none;
-    color: white;
-    font-weight: 900;
-    margin: 0 auto 0 1em;
-
-    transition: color 160ms ease-in;
-}
-
-.logo:hover {
-    color: #ccc;
-}
-
-.logo:active {
-    color: #666;
-}
-
-.nav--item {
-    cursor: pointer;
-    transition: color 160ms ease-in;
-}
-
-.nav--item:hover {
-    color: #ccc;
-    text-decoration: line-through;
-}
-
-.nav--item:active {
-    color: #666;
-}
-
-.burger-menu {
-    padding: 1em;
-    cursor: pointer;
-}
-
-.burger-menu--line {
-    width: 30px;
-    height: 3px;
-    margin: 6px;
-    border-radius: 5px;
-    background-color: white;
+    z-index: 69;
 }
 
 .main {
     position: relative;
-    z-index: -2;
+    z-index: -69;
 }
