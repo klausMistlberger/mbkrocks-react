@@ -1,4 +1,5 @@
 address {
+    margin: 0;
     text-align: left;
 }
 
@@ -12,4 +13,10 @@ p {
 
 a {
     color: white;
+
+    transition: color 160ms ease-in-out;
+}
+
+a:hover {
+    color: var(--bordercolor);
 }

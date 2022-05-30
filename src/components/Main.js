@@ -1,6 +1,8 @@
 import React from 'react';
 import './Main.css';
 import About from './About';
+import Projects from './Projects';
+import Photography from './Photography';
 import Contact from './Contact';
 
 export default function Main(props) {
@@ -17,6 +19,8 @@ export default function Main(props) {
             }
             
             {props.navigation[1].isShown && <About />}
+            {props.navigation[2].isShown && <Projects />}
+            {props.navigation[3].isShown && <Photography />}
             {props.navigation[4].isShown && <Contact />}
 
         </div>

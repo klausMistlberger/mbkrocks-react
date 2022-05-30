@@ -4,7 +4,7 @@ import './About.css';
 export default function About() {
     return (
         <div className="about">
-            <h1>About Me</h1>
+            <h2>About Me</h2>
             <p>
             Seeking a career change to a software development position with focus on JavaScript, Node JS and React. Driven self-starter and fast learner who has experience in training new employees. Highly stress-resistant and always delivering on time. 
             </p>
