@@ -9,15 +9,19 @@
 } */
 
 .tenzies {
-    background-color: #F5F5F5;
+    background-color: #848489;
+    
     height: 400px;
-    max-width: 620px;
+    max-width: 575px;
     border-radius: 10px;
     margin: 1em auto;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    position: relative;
 }
 
 .counter {
@@ -88,18 +92,18 @@
     font-weight: 700;
     font-family: "Karla", sans-serif;
     color: white;
-    background-color: #5035FF;
+    background-color: var(--midblue);
     box-shadow: 4px 2px 8px rgba(0, 0, 0, 0.18);
     border-radius: 4px;
     border: none;
-    width: 92px;
+    width: 150px;
     height: 36px;
     cursor: pointer;
     transition: background-color 160ms ease-in-out;
 }
 
 .btnRoll:hover {
-    background-color: #2200ff;
+    background-color: #397979;
 }
 
 .btnRoll:active {
@@ -163,4 +167,11 @@ nav.eyes .toggler--slider--circle {
 
 nav.eyes .toggler--slider {
     justify-content: flex-end;
+}
+
+.confetti {
+    position: absolute;
+    max-width: 575px;
+    /* top: 0;
+    left: 0; */
 }

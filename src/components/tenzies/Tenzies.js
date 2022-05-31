@@ -7,13 +7,13 @@ import '../css/Tenzies.css';
 
 export default function Tenzies() {
 
-    if ( !localStorage.getItem( 'tenzies' ) ) {
-        localStorage.setItem( 'tenzies', JSON.stringify( '-' ) );
-    };
+    // if ( !localStorage.getItem( 'tenzies' ) ) {
+    //     localStorage.setItem( 'tenzies', JSON.stringify( '-' ) );
+    // };
     
     const [tenzies, setTenzies] = useState( false );
-    const [rolls, setRolls] = useState( 0 );
-    const [highscore, setHighscore] = useState( JSON.parse( localStorage.getItem( 'tenzies' ) ) );
+    // const [rolls, setRolls] = useState( 0 );
+    // const [highscore, setHighscore] = useState( JSON.parse( localStorage.getItem( 'tenzies' ) ) );
 
     const [eyeMode, setEyeMode] = useState( true ); 
     const toggleEyeMode = () => {
@@ -47,14 +47,14 @@ export default function Tenzies() {
         if ( allDiceHeld && allValuesMatch ) {
             setTenzies( true );
             // console.log( "you've won" );
-            if ( highscore === '-' ) {
-                setHighscore( rolls );
-                localStorage.setItem( 'tenzies', JSON.stringify( rolls ) );
-            };
-            if ( rolls < highscore ) {
-                setHighscore( rolls );
-                localStorage.setItem( 'tenzies', JSON.stringify( rolls ) );
-            };
+            // if ( highscore === '-' ) {
+            //     setHighscore( rolls );
+            //     localStorage.setItem( 'tenzies', JSON.stringify( rolls ) );
+            // };
+            // if ( rolls < highscore ) {
+            //     setHighscore( rolls );
+            //     localStorage.setItem( 'tenzies', JSON.stringify( rolls ) );
+            // };
         };
     }, [diceArray]);
 
@@ -85,22 +85,29 @@ export default function Tenzies() {
         setDiceArray( prevDice => {
             return prevDice.map( die => die.isHeld ? die : generateNewDie() );
         });
-        setRolls( prevRolls => prevRolls + 1 );
+        // setRolls( prevRolls => prevRolls + 1 );
     };
 
     const newGame = () => {
         setDiceArray( allNewDice() );
         setTenzies( false );
-        setRolls( 0 );
+        // setRolls( 0 );
         // setHighscore( localStorage.getItem( 'tenzies' ) );
     };
 
     return (
         <main className="tenzies">
-            { tenzies && <Confetti /> }
+            { 
+                tenzies 
+                    &&  <Confetti 
+                            className="confetti" 
+                            width={484} 
+                            height={400}
+                        /> 
+            }
             <Navbar 
-                highscore={highscore} 
-                rolls={rolls}
+                // highscore={highscore} 
+                // rolls={rolls}
                 eyeMode={eyeMode}
                 toggleEyeMode={toggleEyeMode}
             />
