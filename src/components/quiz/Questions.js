@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { convertHTMLEntities } from './htmlEntities';
 
 export default function Questions(props) {
-    console.log( props );
+    // console.log( props );
     let questions = [];
     try {
         // mapping over questions
@@ -15,7 +15,7 @@ export default function Questions(props) {
                          key={answer} 
                          onClick={(ev) => {props.setAnswerData(ev)}}
                          data-i={`${qix}-${aix}`}
-                         data-selection={props.isSelected[qix][aix]}
+                         data-selection={props.isSelected[qix][aix].toString()}
                     >
                         { convertHTMLEntities( answer ) }
                     </div>
@@ -69,7 +69,6 @@ export default function Questions(props) {
         });
 
         setResult( result );
-        // setAnswersChecked( true );
         props.isAnswersChecked();
     };
 

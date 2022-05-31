@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import '../css/Quiz.css';
 import Welcome from './Welcome';
 import Questions from './Questions';
-
 
 export default function Quiz() {
 
@@ -58,7 +57,7 @@ export default function Quiz() {
     useEffect(() => {
         // set all possible 'answerIsSelected' to false
         const allAnswersArray = questions.map( question => {
-            let singleAnswerArray = [];
+            const singleAnswerArray = [];
             question.answers.forEach( (el,ix) => {
                 singleAnswerArray[ix] = false;
             });
@@ -69,20 +68,21 @@ export default function Quiz() {
     [questions]);
 
     const setAnswerData = (ev) => {
+        console.log( answerIsSelected );
+        console.log( 'change state' );
         const target = ev.target;
         // console.log( target );
         const answer = target.getAttribute( 'data-i' ).split('-');
         // console.log( answer );
         setAnswerIsSelected( prevSelection => {
-            const answerSelection = [...prevSelection];
-            console.log(answerSelection[answer[0]])
+            let answerSelection = [...prevSelection];
             answerSelection[answer[0]].forEach( (el, ix) => {
                 // console.log( el, ix );
-                ix === answer[1]*1
+                ix.toString() === answer[1]
                     ? answerSelection[answer[0]][ix] = !el
                     : answerSelection[answer[0]][ix] = false;
             })
-            // console.log(answerSelection)
+            console.log(answerSelection)
             return answerSelection;
         });
     };
@@ -91,9 +91,9 @@ export default function Quiz() {
         <div className="quiz">
             <img src="./images/top-right.png" alt="" className="topright" />
             <img src="./images/bottom-left.png" alt="" className="bottomleft" />
-            { startScreen ? 
-                <Welcome start={startQuiz} /> 
-              : <Questions 
+            { startScreen 
+                ? <Welcome start={startQuiz} /> 
+                : <Questions 
                     questions={questions} 
                     newQuestions={setQuestions}
                     setAnswerData={setAnswerData}
