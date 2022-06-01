@@ -2,6 +2,11 @@
     position: relative;
 }
 
+.project-examples {
+    display: flex;
+    gap: 4em;
+}
+
 .project-description {
     margin: 0;
 }
