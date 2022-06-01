@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.project-description {
+    margin: 0;
+}
+
 .button-game {
     border: none;
 }

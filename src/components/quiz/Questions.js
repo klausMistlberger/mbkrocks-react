@@ -15,7 +15,7 @@ export default function Questions(props) {
                          key={answer} 
                          onClick={(ev) => {props.setAnswerData(ev)}}
                          data-i={`${qix}-${aix}`}
-                         data-selection={props.isSelected[qix][aix].toString()}
+                         data-selection={props.answerIsSelected[qix][aix].toString()}
                     >
                         { convertHTMLEntities( answer ) }
                     </div>

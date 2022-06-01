@@ -67,28 +67,22 @@ export default function Quiz() {
     },
     [questions]);
 
-    const setAnswerData = (ev) => {
-        console.log( answerIsSelected );
-        console.log( 'change state' );
-        const target = ev.target;
-        // console.log( target );
+    const setAnswerData = (event) => {
+        const target = event.target;
         const answer = target.getAttribute( 'data-i' ).split('-');
-        // console.log( answer );
         setAnswerIsSelected( prevSelection => {
-            let answerSelection = [...prevSelection];
-            answerSelection[answer[0]].forEach( (el, ix) => {
-                // console.log( el, ix );
-                ix.toString() === answer[1]
-                    ? answerSelection[answer[0]][ix] = !el
-                    : answerSelection[answer[0]][ix] = false;
-            })
-            console.log(answerSelection)
+            const answerSelection = [...prevSelection];
+            answerSelection[answer[0]].forEach( (element, index) => {
+                index === answer[1]*1
+                    ? answerSelection[answer[0]][index] = true
+                    : answerSelection[answer[0]][index] = false;
+            });
             return answerSelection;
         });
     };
 
     return (
-        <div className="quiz">
+        <div className="quiz-main">
             <img src="./images/top-right.png" alt="" className="topright" />
             <img src="./images/bottom-left.png" alt="" className="bottomleft" />
             { startScreen 
@@ -97,7 +91,7 @@ export default function Quiz() {
                     questions={questions} 
                     newQuestions={setQuestions}
                     setAnswerData={setAnswerData}
-                    isSelected={answerIsSelected}
+                    answerIsSelected={answerIsSelected}
                     newGame={startNewGame}
                     isAnswersChecked={isAnswersChecked}
                     answersChecked={answersChecked}

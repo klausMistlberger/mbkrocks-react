@@ -24,18 +24,21 @@ export default function Projects() {
 
     return (
         <div className="projects">
-            <h2>Projects</h2>
-
+            { !(tenzies || quiz) && <h2>Projects</h2> }
+            {/* -------------------------- Tenzies -------------------------- */}
             { !quiz && <div className="tenzies-game">
                 <h3>Tenzies</h3>
+                { !tenzies && <p className="project-description">A dice game</p> }
                 <button className="button-game" onClick={(ev) => {startTenzies(ev)}}>
                     Start Game
                 </button>
                 {tenzies && <Tenzies />}
             </div> }
 
+            {/* -------------------------- Quiz -------------------------- */}
             { !tenzies && <div className="quiz-game">
                 <h3>Quiz</h3>
+                { !quiz && <p className="project-description">Test your knowledge</p> }
                 <button className="button-game" onClick={(ev) => {startQuiz(ev)}}>
                     Start Game
                 </button>
