@@ -6,7 +6,7 @@ export default function App() {
 
     const navMenu = [
         {
-            name: "Main", 
+            name: "Hoi", 
             isShown: true,
             id: 0
         },

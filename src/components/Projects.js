@@ -2,24 +2,33 @@ import React, {useState} from 'react';
 import './css/Projects.css';
 import Tenzies from './tenzies/Tenzies';
 import Quiz from './quiz/Quiz';
+import EntwederOder from './EntwederOder';
 
 export default function Projects() {
 
     const [tenzies, setTenzies] = useState( false );
 
-    const startStopGame = ( game, ev ) => {
-        game ? ev.target.innerHTML = 'Start Game' : ev.target.innerHTML = 'Stop Game';
-    }
+    const startStopGame = ( game, event, eo ) => {
+        eo 
+            ? (game ? event.target.innerHTML = 'Decide' : event.target.innerHTML = 'Stop deciding')
+            : (game ? event.target.innerHTML = 'Start Game' : event.target.innerHTML = 'Stop Game')
+    };
 
-    const startTenzies = (ev) => {
+    const startTenzies = (event) => {
         setTenzies( prevState => !prevState );
-        startStopGame( tenzies, ev );
+        startStopGame( tenzies, event );
     };
 
     const [quiz, setQuiz] = useState( false );
-    const startQuiz = (ev) => {
+    const startQuiz = (event) => {
         setQuiz( prevState => !prevState );
-        startStopGame( quiz, ev );
+        startStopGame( quiz, event );
+    };
+
+    const [eo, setEo] = useState( false );
+    const startEo = (event) => {
+        setEo( prevState => !prevState );
+        startStopGame( eo, event, true );
     };
 
     return (
@@ -27,25 +36,42 @@ export default function Projects() {
             { !(tenzies || quiz) && <h2>Projects</h2> }
             <div className="project-examples">
                 {/* -------------------------- Tenzies -------------------------- */}
-                { !quiz && <div className="tenzies-game">
+                { (!quiz && !eo) && <div className="tenzies-game">
                     <h3>Tenzies</h3>
                     { !tenzies && <p className="project-description">A dice game</p> }
-                    <button className="button-game" onClick={(ev) => {startTenzies(ev)}}>
+                    <button className="button-game" onClick={(event) => {startTenzies(event)}}>
                         Start Game
                     </button>
                     {tenzies && <Tenzies />}
                 </div> }
 
                 {/* -------------------------- Quiz -------------------------- */}
-                { !tenzies && <div className="quiz-game">
+                { (!tenzies && !eo) && <div className="quiz-game">
                     <h3>Quiz</h3>
                     { !quiz && <p className="project-description">Test your knowledge</p> }
-                    <button className="button-game" onClick={(ev) => {startQuiz(ev)}}>
+                    <button className="button-game" onClick={(event) => {startQuiz(event)}}>
                         Start Game
                     </button>
                     {quiz && <Quiz />}
                 </div> }
+
+                { (!tenzies && !quiz) && <div className="entweder-oder-generator">
+                    <h3>Entweder-Oder</h3>
+                    { !eo && <p className="project-description">Undecisive?</p> }
+                    <button className="button-game" onClick={(event) => {startEo(event)}}>
+                        Decide
+                    </button>
+                    {eo && <EntwederOder />}
+                </div> }
+
             </div>
+            
+
+                {/* <div className="entweder-oder-generator">
+                    <h3>Entweder-Oder</h3>
+
+                    
+                </div> */}
             
         </div>
     );

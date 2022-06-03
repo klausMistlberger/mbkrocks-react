@@ -124,3 +124,11 @@ nav {
     background-color: white;
 }
 
+.nav--item-container[active="false"] {
+    pointer-events: none;
+}
+
+.nav--item-container[portrait="false"] {
+    pointer-events: auto;
+}
+

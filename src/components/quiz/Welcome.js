@@ -3,7 +3,7 @@ import React from 'react';
 export default function Welcome(props) {
     return (
         <div className="welcome-screen">
-            <h1>Quizzical</h1>
+            <h2>Quizzical</h2>
             <p>Test your knowledge</p>
 
             <button 

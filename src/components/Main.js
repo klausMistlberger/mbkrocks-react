@@ -14,7 +14,7 @@ export default function Main(props) {
                 props.navigation[0].isShown 
                 &&  
                 <div className="main">
-                    <h1>Welcome to Klaus Mistlberger</h1>
+                    <h1>Hoi.</h1>
                 </div>
             }
             

@@ -9,6 +9,6 @@
     align-items: center;
 }
 
-/* h1 {
+.main > h1 {
     font-size: 4em;
-} */
+}
