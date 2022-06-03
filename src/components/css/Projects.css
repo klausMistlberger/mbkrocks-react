@@ -3,8 +3,11 @@
 }
 
 .project-examples {
+    padding: 2em;
     display: flex;
+    justify-content: center;
     gap: 4em;
+    flex-wrap: wrap;
 }
 
 .project-description {

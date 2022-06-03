@@ -33,7 +33,7 @@ export default function Projects() {
 
     return (
         <div className="projects">
-            { !(tenzies || quiz) && <h2>Projects</h2> }
+            { !(tenzies || quiz || eo) && <h2>Projects</h2> }
             <div className="project-examples">
                 {/* -------------------------- Tenzies -------------------------- */}
                 { (!quiz && !eo) && <div className="tenzies-game">

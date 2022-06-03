@@ -22,8 +22,11 @@
 }
 
 .eOForm-input {
-    max-width: 260px;
+    font-family: 'Nunito Sans', sans-serif;
+    max-width: 96%;
     height: 2em;
+    font-size: 1.2em;
+    font-weight: 600;
     text-align: center;
     align-self: center;
     border-radius: 9px;
@@ -33,4 +36,9 @@
 .eOForm > button {
     margin: 0;
     align-self: center;
+}
+
+.eOResult {
+    min-height: 1.5em;
+    font-size: 1.5em;
 }

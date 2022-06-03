@@ -51,7 +51,7 @@ export default function Header(props) {
 
     return(
         <nav>
-            <a href="/" className="logo">MBK</a>
+            <a href="/" className="logo">MbK</a>
             <div className="nav--item-container" portrait="" active="false">
                 {navItems}
             </div>

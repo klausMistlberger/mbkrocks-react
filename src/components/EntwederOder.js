@@ -57,7 +57,7 @@ export default function EntwederOder() {
                     Go
                 </button>
             </form>
-            <div className="eOResult">{output || '&nbsp;'}</div>
+            <h3 className="eOResult">{output}</h3>
         </div>
     );
 };

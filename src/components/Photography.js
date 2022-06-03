@@ -43,7 +43,7 @@ export default function Photography() {
             <h4 className="equipment-list">Chemicals</h4>
             <ul className="equipment-list">
                 <li>Rodinal</li>
-                <li>Tetenacl C41</li>
+                <li>Tetenal C41</li>
             </ul>
 
         </div>

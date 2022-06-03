@@ -1,3 +1,9 @@
+@media screen and (max-width: 575px) {
+    .about-content {
+        flex-wrap: wrap;
+    }
+}
+
 .about {
     text-align: left;
     margin: 0 3em;
@@ -5,4 +11,16 @@
 
 .about > h2 {
     text-align: center;
+}
+
+.about-content {
+    display: flex;
+    gap: 2em;
+}
+
+.img-mbk {
+    width: 150px;
+    height: 100%;
+    border-radius: 9px;
+    /* margin-right: 1em; */
 }
