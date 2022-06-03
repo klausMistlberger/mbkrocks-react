@@ -96,7 +96,7 @@ export default function Tenzies() {
     };
 
     return (
-        <main className="tenzies">
+        <div className="tenzies">
             { 
                 tenzies 
                     &&  <Confetti 
@@ -121,6 +121,6 @@ export default function Tenzies() {
                 <button className="btnRoll" onClick={newGame}>New Game</button>
               : <button className="btnRoll" onClick={rollNewDice}>Roll dice</button>
             }
-        </main>
+        </div>
     );
 };
