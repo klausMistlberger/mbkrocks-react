@@ -83,8 +83,6 @@ export default function Quiz() {
 
     return (
         <div className="quiz-main">
-            <img src="./images/top-right.png" alt="" className="topright" />
-            <img src="./images/bottom-left.png" alt="" className="bottomleft" />
             { startScreen 
                 ? <Welcome start={startQuiz} /> 
                 : <Questions 
