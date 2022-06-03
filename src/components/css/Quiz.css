@@ -3,6 +3,7 @@
         display: grid;
         grid-template: auto auto / repeat( 2, 1fr );
         gap: 1em;
+        /* justify-items: center; */
     }
     
 }
@@ -75,6 +76,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 350px;
+    max-width: 80vw;
 
     /* background-color: lightblue; */
 }

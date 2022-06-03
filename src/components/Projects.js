@@ -36,7 +36,7 @@ export default function Projects() {
             { !(tenzies || quiz || eo) && <h2>Projects</h2> }
             <div className="project-examples">
                 {/* -------------------------- Tenzies -------------------------- */}
-                { (!quiz && !eo) && <div className="tenzies-game">
+                { (!quiz && !eo) && <div className="project">
                     <h3>Tenzies</h3>
                     { !tenzies && <p className="project-description">A dice game</p> }
                     <button className="button-game" onClick={(event) => {startTenzies(event)}}>
@@ -46,7 +46,7 @@ export default function Projects() {
                 </div> }
 
                 {/* -------------------------- Quiz -------------------------- */}
-                { (!tenzies && !eo) && <div className="quiz-game">
+                { (!tenzies && !eo) && <div className="project">
                     <h3>Quiz</h3>
                     { !quiz && <p className="project-description">Test your knowledge</p> }
                     <button className="button-game" onClick={(event) => {startQuiz(event)}}>
@@ -55,7 +55,7 @@ export default function Projects() {
                     {quiz && <Quiz />}
                 </div> }
 
-                { (!tenzies && !quiz) && <div className="entweder-oder-generator">
+                { (!tenzies && !quiz) && <div className="project">
                     <h3>Entweder-Oder</h3>
                     { !eo && <p className="project-description">Undecisive?</p> }
                     <button className="button-game" onClick={(event) => {startEo(event)}}>

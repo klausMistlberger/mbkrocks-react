@@ -10,7 +10,7 @@ export default function Tenzies() {
     // if ( !localStorage.getItem( 'tenzies' ) ) {
     //     localStorage.setItem( 'tenzies', JSON.stringify( '-' ) );
     // };
-    
+
     const [tenzies, setTenzies] = useState( false );
     // const [rolls, setRolls] = useState( 0 );
     // const [highscore, setHighscore] = useState( JSON.parse( localStorage.getItem( 'tenzies' ) ) );
