@@ -44,7 +44,7 @@ export default function Header(props) {
 
     useEffect(() => {
         const navItemContainer = document.querySelector( '.nav--item-container' );
-        const isActive = !navItemContainer.getAttribute( 'active' );
+        // const isActive = !navItemContainer.getAttribute( 'active' );
         navItemContainer.setAttribute( 'active', `${burgerMenu}` );
     },
     [burgerMenu]);

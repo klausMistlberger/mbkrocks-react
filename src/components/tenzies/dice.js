@@ -1,4 +1,4 @@
-export default {
+const Dice = {
     1:  <div className="die--grid" data-value="1">
             <div className="white"></div>
             <div className="white"></div>
@@ -66,3 +66,5 @@ export default {
             <div className="black"></div>
         </div>
 }
+
+export default Dice;
