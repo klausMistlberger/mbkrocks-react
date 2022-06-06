@@ -1,28 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './css/Photography.css';
 import Photo from './Photo';
-import Photoslider from './Photoslider';
-// import fs from 'fs';
-// const fs = require('fs');
 import photolist from './photolist';
 
-export default function Photography() {
-
-    const [slideshow, setSlideshow] = useState(false);
-
-    const openSlideshow = event => {
-        const target = event.target;
-        console.log( target );
-        setSlideshow( prevVal => !prevVal );
-    };
-
+export default function Photography(props) {
+    // console.log( props );
     return (
         <div className="photography">
             <h2>Photography</h2>
             <p>
-                I'm very passionate about analog photography and develop my films myself.
+                I'm very passionate about analog photography and develop my films myself. Here I just present a small amount of the pictures I've taken. Feel free to take a look around at my <a href="https://www.instagram.com/klaus.mistlberger/" target="_blank" rel="noreferrer">Instagram</a> or <a href="https://www.lomography.com/homes/threolin" target="_blank" rel="noreferrer">Lomo Home</a>.
             </p>
-
+            
             <div className="photo-equipment">
                 <h3 className="equipment-list">Equipment</h3>
                 <h4 className="equipment-list">Cameras</h4>
@@ -63,14 +52,9 @@ export default function Photography() {
             <div>
                 <Photo 
                     photos={photolist}
-                    openSlideshow={openSlideshow}
+                    openSlideshow={props.openSlideshow}
                 />
 
-                { slideshow && <Photoslider 
-                    photos={photolist}
-                /> }
-                
-                
             </div>
 
         </div>

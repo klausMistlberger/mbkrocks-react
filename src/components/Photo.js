@@ -4,9 +4,11 @@ export default function Photo(props) {
     // console.log( props );
 
     const photos = props.photos.map( (element, index) => {
+
         const style = {
             backgroundImage: `url(./photos/${element})`
         };
+        
         return (
             <div className="photo-container">
                 <div 

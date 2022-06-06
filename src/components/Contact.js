@@ -27,6 +27,8 @@ export default function Contact() {
                 <br />
                 <br />
                 <a href="https://github.com/klausMistlberger/mbkrocks-react" target="_blank" rel="noreferrer">GitHub repo for this page</a>
+                <br />
+                <a href="https://gitlab.com/klausMistlberger">My GitLab</a>
             </address>
         </div>
 

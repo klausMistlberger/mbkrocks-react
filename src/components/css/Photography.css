@@ -1,3 +1,18 @@
+@media screen and (max-width: 575px) {
+    :root {
+        --arrowdim: 21px;
+        --arrowstyle: 6px solid grey;
+    }
+}
+
+@media screen and (min-width: 575px) {
+    :root {
+        --arrowdim: 42px;
+        --arrowstyle: 12px solid grey;
+    }
+}
+
+
 .photography {
     margin: 0 2em;
 }
@@ -33,16 +48,10 @@ li {
     justify-content: center;
 
     max-width: 575px;
-}
-
-.photo-preview {
-    background-color: salmon;
-    /* margin: 1em; */
-    height: 150px;
-
-    border-radius: 12px;
+    margin-bottom: 4em;
 
 }
+
 
 .photo-container {
     border-radius: 12px;
@@ -75,16 +84,52 @@ li {
 }
 
 .slideshow {
-    z-index: 999;
+    z-index: 69;
     position: absolute;
 
+    padding: 1em;
 
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 
-    width: 100%;
-    height: 100%;
-    background-color: #ccc6;
+    background-color: #336d;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photoAndNav {
+    width: 95%;
+    max-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.photoNav {
+    z-index: 70;
+    width: var(--arrowdim);
+    height: var(--arrowdim);
+    border-top: var(--arrowstyle);
+
+    cursor: pointer;
+}
+
+.photoForward {
+    border-right: var(--arrowstyle);
+    transform: rotate(45deg)
+}
+
+.photoBack {
+    border-left: var(--arrowstyle);
+    transform: rotate(-45deg)
+}
+
+.activePhoto {
+    max-width: 85%;
+    max-height: 85%;
 }

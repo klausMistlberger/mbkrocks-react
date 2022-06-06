@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
+import Photoslider from './components/Photoslider';
+import photolist from './components/photolist';
 
 export default function App() {
 
@@ -33,7 +35,6 @@ export default function App() {
     ];
 
     const [navigationMenu, setNavigationMenu] = useState(navMenu);
-
     const changeNavigation = (ev) => {
         const target = ev.target;
         // console.log( target.innerHTML );
@@ -48,6 +49,16 @@ export default function App() {
             return newNav;
         });
     };
+
+    const [photoIndex, setPhotoIndex] = useState( 0 );
+    
+    const [slideshow, setSlideshow] = useState(false);
+    const openSlideshow = event => {
+        const target = event.target;
+        // console.log( target );
+        setPhotoIndex( target.getAttribute( 'data-index' ) );
+        setSlideshow( prevVal => !prevVal );
+    };
     
     return (
         <div className="App">
@@ -55,7 +66,18 @@ export default function App() {
                 navigation={navigationMenu}
                 changeNavigation={changeNavigation}
             />
-            <Main navigation={navigationMenu} />
+            <Main 
+                navigation={navigationMenu}
+                slideshow={slideshow}
+                openSlideshow={openSlideshow}
+            />
+
+            { slideshow && <Photoslider 
+                    photos={photolist}
+                    photoIndex={photoIndex}
+                    setPhotoIndex={setPhotoIndex}
+                    setSlideshow={setSlideshow}
+                /> }
         </div>
     );
 };
