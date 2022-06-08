@@ -77,6 +77,9 @@ li {
     background-position: center;
     
     background-color: var(--midblue);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15)
+               -2px -2px 4px rgba(0, 0, 0, 0.15)
+    ;
 
     transition: transform 320ms ease-in-out;
 
@@ -125,15 +128,25 @@ li {
 
 .photoForward {
     border-right: var(--arrowstyle);
-    transform: rotate(45deg)
+    transform: rotate(45deg);
+
+    box-shadow: 3px -3px 8px rgba(0, 0, 0, 0.15);
+
 }
 
 .photoBack {
     border-left: var(--arrowstyle);
-    transform: rotate(-45deg)
+    transform: rotate(-45deg);
+
+    box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.15);
+
 }
 
 .activePhoto {
     max-width: 85%;
     max-height: 85%;
+
+    box-shadow: -6px -6px 8px rgba(0, 0, 0, 0.15), 
+                  6px 6px 8px rgba(0, 0, 0, 0.15)            
+    ;
 }
