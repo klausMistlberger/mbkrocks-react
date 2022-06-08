@@ -55,6 +55,7 @@ export default function Projects() {
                     {quiz && <Quiz />}
                 </div> }
 
+
                 { (!tenzies && !quiz) && <div className="project">
                     <h3>Entweder-Oder</h3>
                     { !eo && <p className="project-description">Undecisive?</p> }
