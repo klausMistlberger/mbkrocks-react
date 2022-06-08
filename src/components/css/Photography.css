@@ -122,6 +122,7 @@ li {
     width: var(--arrowdim);
     height: var(--arrowdim);
     border-top: var(--arrowstyle);
+    border-radius: 3px;
 
     cursor: pointer;
 }
@@ -130,7 +131,7 @@ li {
     border-right: var(--arrowstyle);
     transform: rotate(45deg);
 
-    box-shadow: 3px -3px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.15);
 
 }
 
@@ -138,7 +139,7 @@ li {
     border-left: var(--arrowstyle);
     transform: rotate(-45deg);
 
-    box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.15);
 
 }
 
