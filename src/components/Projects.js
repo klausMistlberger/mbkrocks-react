@@ -67,13 +67,6 @@ export default function Projects() {
 
             </div>
             
-
-                {/* <div className="entweder-oder-generator">
-                    <h3>Entweder-Oder</h3>
-
-                    
-                </div> */}
-            
         </div>
     );
 };

@@ -23,7 +23,7 @@ export default function About() {
                         After years of experience in post-production and advertising, I know what it means to spare no effort for achieving goals in time. I've been working with my clients on several award-winning ad-campaigns for e.g. Erste Bank, Opel and Coca Cola and also supervising international, multilingual projects for e.g. Gardena, Parship and DM.
                     </p>
                     <p>
-                        For more details on my skillset check out my <a href="https://drive.proton.me/urls/VD76BN3FRW#o8ZSuuhlUJNY" target="_blank" rel="noreferrer">Resumé</a>.
+                        For more details on my skillset check out my <a href="https://drive.proton.me/urls/0VC6383VVG#LkccBQNv7VOM" target="_blank" rel="noreferrer">Resumé</a>.
                     </p>
                 </div>
             </div>
